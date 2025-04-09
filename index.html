@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quantex AI</title>
 
-    <!-- tailwindcss -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
     <!-- font link -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,12 +12,15 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-
     <!-- font awesome  -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <!-- aos for animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- tailwindcss -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <style>
       .poppins-thin {
@@ -30,7 +30,9 @@
   </head>
   <body class="poppins-thin">
     <!-- nav bar  -->
-    <nav class="max-w-[1538px] mx-auto pt-[30px] sticky top-0 z-50">
+    <nav
+      class="max-w-[1538px] mx-auto pt-[30px] sticky top-0 z-50 px-[20px] 2xl:px-0"
+    >
       <div
         class="flex justify-between items-center pt-[23px] pb-[24px] px-[50px] border rounded-[24px] border-[#B2C2FC] bg-gradient-to-r from-[#FFFFFF] to-[#DEFCFF]"
       >
@@ -64,7 +66,11 @@
       class="bg-no-repeat bg-cover bg-[url(./assets/images/banner.png)] bg-bottom h-[1291px] pt-[138px] -mt-[137px]"
     >
       <!-- banner  -->
-      <div class="max-w-[1538px] mx-auto pt-[40px]">
+      <div
+        class="max-w-[1538px] mx-auto pt-[40px]"
+        data-aos="fade-up"
+        data-aos-duration="2000"
+      >
         <div
           class="flex items-center justify-center gap-2 py-1 border border-[#4CE6EB] bg-[#FFFFFF] max-w-[300px] mx-auto rounded-[29px]"
         >
@@ -79,9 +85,17 @@
       </div>
 
       <!-- search box  -->
-      <div class="max-w-[696px] mx-auto mt-[42px] relative">
+      <div
+        class="2xl:max-w-[696px] max-w-[596px] mx-auto mt-[42px] relative"
+        data-aos="fade-up"
+        data-aos-duration="2000"
+      >
         <!-- banner image  -->
-        <div class="absolute z-40 -left-[600px] -top-[63px]">
+        <div
+          class="absolute z-40 -left-[600px] -top-[63px]"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
           <img src="./assets/images/banner-image.png" alt="banner-image" />
         </div>
         <!-- banner progress  -->
@@ -164,8 +178,12 @@
     </div>
 
     <!-- coin section -->
-    <section class="max-w-[1538px] mx-auto pt-[108px] mb-[70px]">
-      <div class="grid grid-cols-5 items-center gap-[116px]">
+    <section
+      class="max-w-[1538px] mx-auto pt-[108px] mb-[70px] px-[20px] 2xl:px-0"
+    >
+      <div
+        class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 2xl:grid-cols-5 items-center gap-y-10 gap-x-[116px]"
+      >
         <div class="flex items-center gap-[19px]">
           <img src="./assets/images/coin-1.png" alt="coin-icon" />
           <span class="text-[30px] font-bold text-[#625A5A]">$100000.78</span>
@@ -192,7 +210,7 @@
     <!-- supercharge your trading  -->
     <section class="max-w-[1538px] mx-auto">
       <div class="flex items-center justify-between">
-        <div class="max-w-[663px]">
+        <div class="max-w-[663px]" data-aos="fade-up" data-aos-duration="2000">
           <img
             class="animate-spin"
             src="./assets/images/twinch-star.png"
@@ -222,7 +240,7 @@
             SING UP →
           </button>
         </div>
-        <div>
+        <div data-aos="fade-up" data-aos-duration="1000">
           <img
             class="w-full"
             src="./assets/images/supercharge-image.png"
@@ -235,6 +253,8 @@
     <!-- Revolutionize section  -->
     <section
       class="bg-no-repeat bg-cover bg-[url(./assets/images/Revolutionize-background.png)] h-[1067px]"
+      data-aos="fade-up"
+      data-aos-duration="2000"
     >
       <div class="max-w-[1538px] mx-auto">
         <!-- top content -->
@@ -368,7 +388,11 @@
     </section>
 
     <!-- experience section -->
-    <section class="max-w-[1538px] mx-auto mt-[110px]">
+    <section
+      class="max-w-[1538px] mx-auto mt-[110px]"
+      data-aos="fade-up"
+      data-aos-duration="2000"
+    >
       <!-- top content -->
       <div class="max-w-[1033px] text-center mx-auto">
         <img
@@ -726,7 +750,11 @@
     </section>
 
     <!-- Free Your Money -->
-    <section class="max-w-[1538px] mx-auto mt-[31px]">
+    <section
+      class="max-w-[1538px] mx-auto mt-[31px]"
+      data-aos="fade-up"
+      data-aos-duration="2000"
+    >
       <div class="flex items-center justify-between">
         <div class="max-w-[663px]">
           <img
@@ -772,7 +800,11 @@
     </section>
 
     <!-- highlights -->
-    <section class="pt-12 text-center">
+    <section
+      class="pt-12 text-center"
+      data-aos="fade-up"
+      data-aos-duration="2000"
+    >
       <!-- Heading -->
       <h2 class="text-4xl font-bold text-gray-900 mb-5">Highlights</h2>
       <p class="text-base text-gray-500 mb-8">
@@ -821,6 +853,8 @@
 
     <!-- Revolutionizing Profitable Trading -->
     <section
+      data-aos="fade-up"
+      data-aos-duration="2000"
       class="max-w-[1311px] p-[29px] mx-auto mt-[80px] bg-no-repeat bg-cover bg-[url(./assets/images/revol.png)] rounded-b-[15px]"
     >
       <div class="bg-white/90 px-8 rounded-xl text-center shadow-md">
@@ -945,5 +979,11 @@
         </div>
       </div>
     </footer>
+
+    <!-- aos for animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
