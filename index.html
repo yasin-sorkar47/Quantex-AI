@@ -26,6 +26,9 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
 
+    <!-- package for the phone input filed -->
+    <link rel="stylesheet" href="./assets/build/css/intlTelInput.css" />
+
     <!-- tailwindcss -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
@@ -34,31 +37,39 @@
         font-family: "Poppins", sans-serif;
       }
 
-      @keyframes marquee {
-        0% {
-          transform: translateX(100%);
+      @layer utilities {
+        @keyframes marquee {
+          0% {
+            transform: translateX(0%);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
         }
-        100% {
-          transform: translateX(-100%);
-        }
-      }
 
-      .animate-marquee {
-        animation: marquee 25s linear infinite;
+        .animate-marquee {
+          animation: marquee 15s linear infinite;
+        }
       }
 
       /* for swiper js  */
       .swiper {
-        max-width: 1280px;
-        height: 1000px;
+        max-width: 1380px;
       }
 
       .swiper-slide {
         height: 100%;
         display: flex;
+        padding-left: 100px;
+        padding-right: 100px;
         align-items: center;
         justify-content: center;
         background: transparent;
+      }
+
+      .item {
+        padding-left: 0px;
+        padding-right: 0px;
       }
 
       .swiper-button-prev,
@@ -205,7 +216,7 @@
       >
         <!-- banner image -->
         <div
-          class="hidden xl:block absolute z-40 -left-[600px] -top-[70px]"
+          class="hidden xl:block absolute z-40 -left-[600px] -top-[75px]"
           data-aos="fade-up"
           data-aos-duration="2000"
         >
@@ -222,7 +233,7 @@
 
         <!-- search box -->
         <div
-          class="relative bg-white rounded-[24px] md:rounded-[34px] px-4 sm:px-6 md:px-[55px] pt-10 md:pt-[47px] pb-12 md:pb-[69px] w-full z-40"
+          class="relative shadow-2xl bg-white rounded-[24px] md:rounded-[34px] px-4 sm:px-6 md:px-[55px] pt-10 md:pt-[47px] pb-12 md:pb-[69px] w-full z-40"
         >
           <div class="text-center mb-6">
             <div class="text-purple-700 -mb-4">
@@ -260,22 +271,13 @@
             />
 
             <div
-              class="flex flex-col sm:flex-row items-stretch sm:items-center border border-gray-300 rounded-lg overflow-hidden"
+              class="flex flex-col sm:flex-row items-stretch sm:items-center border border-gray-300 rounded-lg"
             >
-              <span
-                class="flex items-center justify-center p-4 md:p-[27px] bg-[#F2ECFE]"
-              >
-                <img
-                  src="https://flagcdn.com/w40/bd.png"
-                  class="w-5 h-5 mr-1"
-                  alt="BD Flag"
-                />
-                +880
-              </span>
               <input
                 type="tel"
+                id="phone"
                 placeholder="Enter Phone Number"
-                class="w-full px-4 py-3 focus:outline-none"
+                class="w-full px-4 py-6 focus:outline-none rounded-lg"
               />
             </div>
 
@@ -291,63 +293,79 @@
     </section>
 
     <div
-      class="-mt-[85px] h-[125px] bg-gradient-to-r from-[#5BFAE3] to-[#6ba6f9] flex flex-column items-center pl-[46px]"
+      class="overflow-hidden bg-gradient-to-r from-[#5BFAE3] to-[#6ba6f9] py-[35px] -mt-[80px]"
     >
-      <div
-        class="grid grid-cols-2 2xl:grid-cols-7 xl:grid-cols-6 lg:grid-cols-4 md:grid-cols-3 gap-x-[29px] md:gap-x-[49px] animate-marquee"
-      >
-        <div class="flex items-center gap-x-1">
-          <i class="fa-solid fa-magnifying-glass text-5xl text-white"></i>
+      <div class="flex w-max animate-marquee whitespace-nowrap gap-x-[49px]">
+        <!--  Start of first loop -->
+        <div class="flex items-center gap-x-6">
+          <img src="./assets/images/Logo.svg" alt="icon" />
           <p class="text-white text-4xl font-semibold">QuanTex</p>
         </div>
-        <div class="flex items-center gap-x-1">
-          <i class="fa-solid fa-magnifying-glass text-5xl text-white"></i>
+        <div class="flex items-center gap-x-6">
+          <img src="./assets/images/Logo.svg" alt="icon" />
           <p class="text-white text-4xl font-semibold">QuanTex</p>
         </div>
-        <div class="hidden md:block">
-          <div class="flex items-center gap-x-1">
-            <i class="fa-solid fa-magnifying-glass text-5xl text-white"></i>
-            <p class="text-white text-4xl font-semibold">QuanTex</p>
-          </div>
+        <div class="flex items-center gap-x-6">
+          <img src="./assets/images/Logo.svg" alt="icon" />
+          <p class="text-white text-4xl font-semibold">QuanTex</p>
         </div>
-        <div class="hidden lg:block">
-          <div class="flex items-center gap-x-1">
-            <i class="fa-solid fa-magnifying-glass text-5xl text-white"></i>
-            <p class="text-white text-4xl font-semibold">QuanTex</p>
-          </div>
+        <div class="flex items-center gap-x-6">
+          <img src="./assets/images/Logo.svg" alt="icon" />
+          <p class="text-white text-4xl font-semibold">QuanTex</p>
         </div>
-        <div class="hidden xl:block">
-          <div class="flex items-center gap-x-1">
-            <i class="fa-solid fa-magnifying-glass text-5xl text-white"></i>
-            <p class="text-white text-4xl font-semibold">QuanTex</p>
-          </div>
+        <div class="flex items-center gap-x-6">
+          <img src="./assets/images/Logo.svg" alt="icon" />
+          <p class="text-white text-4xl font-semibold">QuanTex</p>
         </div>
-        <div class="hidden xl:block">
-          <div class="flex items-center gap-x-1">
-            <i class="fa-solid fa-magnifying-glass text-5xl text-white"></i>
-            <p class="text-white text-4xl font-semibold">QuanTex</p>
-          </div>
+        <div class="flex items-center gap-x-6">
+          <img src="./assets/images/Logo.svg" alt="icon" />
+          <p class="text-white text-4xl font-semibold">QuanTex</p>
         </div>
-        <div class="hidden 2xl:block">
-          <div class="flex items-center gap-x-1">
-            <i class="fa-solid fa-magnifying-glass text-5xl text-white"></i>
-            <p class="text-white text-4xl font-semibold">QuanTex</p>
-          </div>
+        <div class="flex items-center gap-x-6">
+          <img src="./assets/images/Logo.svg" alt="icon" />
+          <p class="text-white text-4xl font-semibold">QuanTex</p>
+        </div>
+
+        <!-- Duplicate for smooth looping -->
+        <div class="flex items-center gap-x-6">
+          <img src="./assets/images/Logo.svg" alt="icon" />
+          <p class="text-white text-4xl font-semibold">QuanTex</p>
+        </div>
+        <div class="flex items-center gap-x-6">
+          <img src="./assets/images/Logo.svg" alt="icon" />
+          <p class="text-white text-4xl font-semibold">QuanTex</p>
+        </div>
+        <div class="flex items-center gap-x-6">
+          <img src="./assets/images/Logo.svg" alt="icon" />
+          <p class="text-white text-4xl font-semibold">QuanTex</p>
+        </div>
+        <div class="flex items-center gap-x-6">
+          <img src="./assets/images/Logo.svg" alt="icon" />
+          <p class="text-white text-4xl font-semibold">QuanTex</p>
+        </div>
+        <div class="flex items-center gap-x-6">
+          <img src="./assets/images/Logo.svg" alt="icon" />
+          <p class="text-white text-4xl font-semibold">QuanTex</p>
+        </div>
+        <div class="flex items-center gap-x-6">
+          <img src="./assets/images/Logo.svg" alt="icon" />
+          <p class="text-white text-4xl font-semibold">QuanTex</p>
+        </div>
+        <div class="flex items-center gap-x-6">
+          <img src="./assets/images/Logo.svg" alt="icon" />
+          <p class="text-white text-4xl font-semibold">QuanTex</p>
         </div>
       </div>
     </div>
-
-    <!-- <div class="xl:-mt-[85px] lg:-mt-[45px] md:-mt-[35px] -mt-[20px]">
-      <img class="w-full" src="./assets/images/banner-bottom.png" alt="image" />
-    </div> -->
 
     <!-- coin section -->
     <section
       class="max-w-[1538px] mx-auto pt-[108px] mb-[70px] px-[20px] 2xl:px-0"
     >
       <div
-        class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 justify-center items-center gap-y-6 sm:gap-y-8 md:gap-y-10 gap-x-6 sm:gap-x-12 md:gap-x-[80px] xl:gap-x-[116px]"
+        class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 justify-items-center items-center gap-y-6 sm:gap-y-8 md:gap-y-10 gap-x-6 sm:gap-x-12 md:gap-x-[80px] xl:gap-x-[116px]"
       >
+        <!-- Coin 1 -->
         <div class="flex items-center gap-4 sm:gap-[19px] justify-center">
           <img
             class="w-10 sm:w-auto"
@@ -367,6 +385,8 @@
             >
           </div>
         </div>
+
+        <!-- Coin 2 -->
         <div class="flex items-center gap-4 sm:gap-[19px] justify-center">
           <img
             class="w-10 sm:w-auto"
@@ -386,6 +406,8 @@
             >
           </div>
         </div>
+
+        <!-- Coin 3 -->
         <div class="flex items-center gap-4 sm:gap-[19px] justify-center">
           <img
             class="w-10 sm:w-auto"
@@ -405,6 +427,8 @@
             >
           </div>
         </div>
+
+        <!-- Coin 4 -->
         <div class="flex items-center gap-4 sm:gap-[19px] justify-center">
           <img
             class="w-10 sm:w-auto"
@@ -424,7 +448,11 @@
             >
           </div>
         </div>
-        <div class="flex items-center gap-4 sm:gap-[19px] justify-center">
+
+        <!-- Coin 5 - centered on mobile -->
+        <div
+          class="flex items-center gap-4 sm:gap-[19px] justify-center col-span-2 md:col-span-1"
+        >
           <img
             class="w-10 sm:w-auto"
             src="./assets/images/coin-5.png"
@@ -453,27 +481,27 @@
       >
         <!-- Left Content -->
         <div
-          class="max-w-[663px] lg:max-w-[465px] xl:max-w-[663px]"
+          class="max-w-[663px] lg:max-w-[465px] xl:max-w-[663px] text-center lg:text-left"
           data-aos="fade-up"
           data-aos-duration="2000"
         >
           <img
-            class="animate-spin [animation-duration:2s]"
+            class="animate-spin mx-auto lg:m-0 [animation-duration:2s]"
             src="./assets/images/twinch-star.png"
             alt="twich-star"
           />
 
           <h2
-            class="text-[32px] sm:text-[40px] xl:text-[52px] font-bold text-[#000000] capitalize mt-[26px] mb-[38px] lg:mb-[18px] xl:mb-[38px] z-50 relative leading-tight"
+            class="text-[32px] text-center lg:text-left sm:text-[40px] xl:text-[52px] font-bold text-[#000000] capitalize mt-[26px] mb-[38px] lg:mb-[18px] xl:mb-[38px] z-50 relative leading-tight"
           >
             Supercharge your trading strategy.
             <span
-              class="w-32 sm:w-60 md:w-72 h-3 sm:h-4 absolute left-0 bottom-2 sm:bottom-3 -z-10 bg-lime-200"
+              class="w-36 sm:w-60 md:w-60 h-3 sm:h-4 absolute left-[60px] md:left-[240px] lg:left-0 bottom-2 sm:bottom-3 -z-10 bg-lime-200"
             ></span>
           </h2>
 
           <p
-            class="text-sm sm:text-base font-normal leading-[28px] sm:leading-[33px] lg:leading-[30px] xl:leading-[33px] text-[#505050] mb-[40px] sm:mb-[49px] lg:mb-[19px] xl:mb-[49px]"
+            class="text-sm sm:text-base text-center lg:text-left font-normal leading-[28px] sm:leading-[33px] lg:leading-[30px] xl:leading-[33px] text-[#505050] mb-[40px] sm:mb-[49px] lg:mb-[19px] xl:mb-[49px]"
           >
             Explore the groundbreaking fusion of quantum computing and AI with
             our in-depth guide. Discover how this cutting-edge technology is
@@ -483,7 +511,7 @@
           </p>
 
           <div
-            class="w-full lg:w-1/2 -mt-[70px] lg:hidden"
+            class="w-full lg:w-1/2 -mt-[50px] lg:hidden"
             data-aos="fade-up"
             data-aos-duration="1000"
           >
@@ -685,28 +713,8 @@
       </div>
 
       <!-- comment card -->
-      <div class="bg-white mt-[54px]">
+      <div class="bg-white mt-[54px] hidden lg:block">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative swiper">
-          <!-- Arrows -->
-          <!-- <div
-            class="absolute top-2/5 -left-4 sm:-left-8 md:-left-12 lg:-left-16 transform -translate-y-1/2 z-10"
-          >
-            <button
-              class="w-[40px] sm:w-[48px] md:w-[56px] h-[40px] sm:h-[48px] md:h-[56px] cursor-pointer bg-white border border-[#C7C7C7] shadow rounded-full flex items-center justify-center text-gray-600"
-            >
-              <img src="./assets/images/left-arrow.png" alt="arrows" />
-            </button>
-          </div>
-          <div
-            class="absolute top-2/5 -right-4 sm:-right-8 md:-right-12 lg:-right-16 transform -translate-y-1/2 z-10"
-          >
-            <button
-              class="w-[40px] sm:w-[48px] md:w-[56px] h-[40px] sm:h-[48px] md:h-[56px] cursor-pointer bg-[#602CD1] shadow rounded-full flex items-center justify-center text-gray-600"
-            >
-              <img src="./assets/images/right-arrow.png" alt="arrow" />
-            </button>
-          </div> -->
-
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
 
@@ -743,13 +751,13 @@
                       class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
                     ></div>
                   </div>
-                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                  <div class="flex items-center gap-0 mt-[22px] mb-[35px]">
                     <img
-                      src="https://i.pravatar.cc/40?img=5"
-                      class="w-[54px] h-[54px] rounded-full"
+                      src="./assets/images/avatar-1.png"
+                      class="w-[110px] h-[110px] rounded-full"
                       alt="Avatar"
                     />
-                    <div>
+                    <div class="-ml-1">
                       <p class="text-[20px] text-[#0F2F64] font-normal">
                         Finda Otsumah
                       </p>
@@ -786,13 +794,13 @@
                       class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
                     ></div>
                   </div>
-                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                  <div class="flex items-center gap-0 mt-[22px] mb-[35px]">
                     <img
-                      src="https://i.pravatar.cc/40?img=5"
-                      class="w-[54px] h-[54px] rounded-full"
+                      src="./assets/images/avatar-2.png"
+                      class="w-[110px] h-[110px] rounded-full"
                       alt="Avatar"
                     />
-                    <div>
+                    <div class="-ml-1">
                       <p class="text-[20px] text-[#0F2F64] font-normal">
                         Finda Otsumah
                       </p>
@@ -829,13 +837,13 @@
                       class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
                     ></div>
                   </div>
-                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                  <div class="flex items-center gap-0 mt-[22px] mb-[35px]">
                     <img
-                      src="https://i.pravatar.cc/40?img=5"
-                      class="w-[54px] h-[54px] rounded-full"
+                      src="./assets/images/avatar-3.png"
+                      class="w-[110px] h-[110px] rounded-full"
                       alt="Avatar"
                     />
-                    <div>
+                    <div class="-ml-1">
                       <p class="text-[20px] text-[#0F2F64] font-normal">
                         Finda Otsumah
                       </p>
@@ -872,13 +880,13 @@
                       class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
                     ></div>
                   </div>
-                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                  <div class="flex items-center gap-0 mt-[22px] mb-[35px]">
                     <img
-                      src="https://i.pravatar.cc/40?img=5"
-                      class="w-[54px] h-[54px] rounded-full"
+                      src="./assets/images/avatar-4.png"
+                      class="w-[110px] h-[110px] rounded-full"
                       alt="Avatar"
                     />
-                    <div>
+                    <div class="-ml-1">
                       <p class="text-[20px] text-[#0F2F64] font-normal">
                         Finda Otsumah
                       </p>
@@ -915,13 +923,13 @@
                       class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
                     ></div>
                   </div>
-                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                  <div class="flex items-center gap-0 mt-[22px] mb-[35px]">
                     <img
-                      src="https://i.pravatar.cc/40?img=5"
-                      class="w-[54px] h-[54px] rounded-full"
+                      src="./assets/images/avatar-5.png"
+                      class="w-[110px] h-[110px] rounded-full"
                       alt="Avatar"
                     />
-                    <div>
+                    <div class="-ml-1">
                       <p class="text-[20px] text-[#0F2F64] font-normal">
                         Finda Otsumah
                       </p>
@@ -958,13 +966,13 @@
                       class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
                     ></div>
                   </div>
-                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                  <div class="flex items-center gap-0 mt-[22px] mb-[35px]">
                     <img
-                      src="https://i.pravatar.cc/40?img=5"
-                      class="w-[54px] h-[54px] rounded-full"
+                      src="./assets/images/avatar-6.png"
+                      class="w-[110px] h-[110px] rounded-full"
                       alt="Avatar"
                     />
-                    <div>
+                    <div class="-ml-1">
                       <p class="text-[20px] text-[#0F2F64] font-normal">
                         Finda Otsumah
                       </p>
@@ -1006,13 +1014,13 @@
                       class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
                     ></div>
                   </div>
-                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                  <div class="flex items-center gap-0 mt-[22px] mb-[35px]">
                     <img
-                      src="https://i.pravatar.cc/40?img=5"
-                      class="w-[54px] h-[54px] rounded-full"
+                      src="./assets/images/avatar-1.png"
+                      class="w-[110px] h-[110px] rounded-full"
                       alt="Avatar"
                     />
-                    <div>
+                    <div class="-ml-1">
                       <p class="text-[20px] text-[#0F2F64] font-normal">
                         Finda Otsumah
                       </p>
@@ -1049,13 +1057,13 @@
                       class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
                     ></div>
                   </div>
-                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                  <div class="flex items-center gap-0 mt-[22px] mb-[35px]">
                     <img
-                      src="https://i.pravatar.cc/40?img=5"
-                      class="w-[54px] h-[54px] rounded-full"
+                      src="./assets/images/avatar-2.png"
+                      class="w-[110px] h-[110px] rounded-full"
                       alt="Avatar"
                     />
-                    <div>
+                    <div class="-ml-1">
                       <p class="text-[20px] text-[#0F2F64] font-normal">
                         Finda Otsumah
                       </p>
@@ -1092,13 +1100,13 @@
                       class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
                     ></div>
                   </div>
-                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                  <div class="flex items-center gap-0 mt-[22px] mb-[35px]">
                     <img
-                      src="https://i.pravatar.cc/40?img=5"
-                      class="w-[54px] h-[54px] rounded-full"
+                      src="./assets/images/avatar-3.png"
+                      class="w-[110px] h-[110px] rounded-full"
                       alt="Avatar"
                     />
-                    <div>
+                    <div class="-ml-1">
                       <p class="text-[20px] text-[#0F2F64] font-normal">
                         Finda Otsumah
                       </p>
@@ -1135,13 +1143,13 @@
                       class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
                     ></div>
                   </div>
-                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                  <div class="flex items-center gap-0 mt-[22px] mb-[35px]">
                     <img
-                      src="https://i.pravatar.cc/40?img=5"
-                      class="w-[54px] h-[54px] rounded-full"
+                      src="./assets/images/avatar-4.png"
+                      class="w-[110px] h-[110px] rounded-full"
                       alt="Avatar"
                     />
-                    <div>
+                    <div class="-ml-1">
                       <p class="text-[20px] text-[#0F2F64] font-normal">
                         Finda Otsumah
                       </p>
@@ -1178,13 +1186,13 @@
                       class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
                     ></div>
                   </div>
-                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                  <div class="flex items-center gap-0 mt-[22px] mb-[35px]">
                     <img
-                      src="https://i.pravatar.cc/40?img=5"
-                      class="w-[54px] h-[54px] rounded-full"
+                      src="./assets/images/avatar-5.png"
+                      class="w-[110px] h-[110px] rounded-full"
                       alt="Avatar"
                     />
-                    <div>
+                    <div class="-ml-1">
                       <p class="text-[20px] text-[#0F2F64] font-normal">
                         Finda Otsumah
                       </p>
@@ -1221,13 +1229,13 @@
                       class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
                     ></div>
                   </div>
-                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                  <div class="flex items-center gap-0 mt-[22px] mb-[35px]">
                     <img
-                      src="https://i.pravatar.cc/40?img=5"
-                      class="w-[54px] h-[54px] rounded-full"
+                      src="./assets/images/avatar-6.png"
+                      class="w-[110px] h-[110px] rounded-full"
                       alt="Avatar"
                     />
-                    <div>
+                    <div class="-ml-1">
                       <p class="text-[20px] text-[#0F2F64] font-normal">
                         Finda Otsumah
                       </p>
@@ -1269,13 +1277,13 @@
                       class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
                     ></div>
                   </div>
-                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                  <div class="flex items-center gap-0 mt-[22px] mb-[35px]">
                     <img
-                      src="https://i.pravatar.cc/40?img=5"
-                      class="w-[54px] h-[54px] rounded-full"
+                      src="./assets/images/avatar-1.png"
+                      class="w-[110px] h-[110px] rounded-full"
                       alt="Avatar"
                     />
-                    <div>
+                    <div class="-ml-1">
                       <p class="text-[20px] text-[#0F2F64] font-normal">
                         Finda Otsumah
                       </p>
@@ -1312,13 +1320,13 @@
                       class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
                     ></div>
                   </div>
-                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                  <div class="flex items-center gap-0 mt-[22px] mb-[35px]">
                     <img
-                      src="https://i.pravatar.cc/40?img=5"
-                      class="w-[54px] h-[54px] rounded-full"
+                      src="./assets/images/avatar-2.png"
+                      class="w-[110px] h-[110px] rounded-full"
                       alt="Avatar"
                     />
-                    <div>
+                    <div class="-ml-1">
                       <p class="text-[20px] text-[#0F2F64] font-normal">
                         Finda Otsumah
                       </p>
@@ -1355,13 +1363,13 @@
                       class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
                     ></div>
                   </div>
-                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                  <div class="flex items-center gap-0 mt-[22px] mb-[35px]">
                     <img
-                      src="https://i.pravatar.cc/40?img=5"
-                      class="w-[54px] h-[54px] rounded-full"
+                      src="./assets/images/avatar-3.png"
+                      class="w-[110px] h-[110px] rounded-full"
                       alt="Avatar"
                     />
-                    <div>
+                    <div class="-ml-1">
                       <p class="text-[20px] text-[#0F2F64] font-normal">
                         Finda Otsumah
                       </p>
@@ -1398,13 +1406,13 @@
                       class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
                     ></div>
                   </div>
-                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                  <div class="flex items-center gap-0 mt-[22px] mb-[35px]">
                     <img
-                      src="https://i.pravatar.cc/40?img=5"
-                      class="w-[54px] h-[54px] rounded-full"
+                      src="./assets/images/avatar-4.png"
+                      class="w-[110px] h-[110px] rounded-full"
                       alt="Avatar"
                     />
-                    <div>
+                    <div class="-ml-1">
                       <p class="text-[20px] text-[#0F2F64] font-normal">
                         Finda Otsumah
                       </p>
@@ -1441,13 +1449,13 @@
                       class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
                     ></div>
                   </div>
-                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                  <div class="flex items-center gap-0 mt-[22px] mb-[35px]">
                     <img
-                      src="https://i.pravatar.cc/40?img=5"
-                      class="w-[54px] h-[54px] rounded-full"
+                      src="./assets/images/avatar-5.png"
+                      class="w-[110px] h-[110px] rounded-full"
                       alt="Avatar"
                     />
-                    <div>
+                    <div class="-ml-1">
                       <p class="text-[20px] text-[#0F2F64] font-normal">
                         Finda Otsumah
                       </p>
@@ -1484,18 +1492,298 @@
                       class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
                     ></div>
                   </div>
-                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                  <div class="flex items-center gap-0 mt-[22px] mb-[35px]">
                     <img
-                      src="https://i.pravatar.cc/40?img=5"
-                      class="w-[54px] h-[54px] rounded-full"
+                      src="./assets/images/avatar-6.png"
+                      class="w-[110px] h-[110px] rounded-full"
                       alt="Avatar"
                     />
-                    <div>
+                    <div class="-ml-1">
                       <p class="text-[20px] text-[#0F2F64] font-normal">
                         Finda Otsumah
                       </p>
                       <p class="text-base text-[#384569]">Norwich, UK</p>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- comment card for mobile -->
+      <div class="bg-white mt-[54px] lg:hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative swiper">
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 swiper-wrapper px-0"
+          >
+            <!-- Cards 1 -->
+            <div class="swiper-slide item">
+              <div>
+                <div
+                  class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 relative"
+                >
+                  <div class="text-yellow-400 text-[28px] mb-3">★★★★★</div>
+                  <h3
+                    class="text-[20px] sm:text-[24px] font-bold text-[#0F2F64] mb-3"
+                  >
+                    “Excellent Services”
+                  </h3>
+                  <p class="text-xs text-[#09276A] leading-relaxed mb-4">
+                    Donna @Carebusinessbootcamp offers an amazing personalised
+                    support with setting up your health and social care
+                    business. She is knowledgeable, infact an expert in the
+                    field, with all the patience and commitment to take you
+                    through your journey successfully.
+                  </p>
+                  <a
+                    href="#"
+                    class="flex items-center text-[#3D6ABF] text-[18px] font-medium gap-1"
+                  >
+                    <span class="text-xl text-blue-600">▸</span>
+                    <span class="underline">Read the review</span>
+                  </a>
+                  <div
+                    class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
+                  ></div>
+                </div>
+                <div class="flex items-center gap-0 mt-[22px] mb-[35px]">
+                  <img
+                    src="./assets/images/avatar-1.png"
+                    class="w-[110px] h-[110px] rounded-full"
+                    alt="Avatar"
+                  />
+                  <div class="-ml-1">
+                    <p class="text-[20px] text-[#0F2F64] font-normal">
+                      Finda Otsumah
+                    </p>
+                    <p class="text-base text-[#384569]">Norwich, UK</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Cards 2 -->
+            <div class="swiper-slide item">
+              <div>
+                <div
+                  class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 relative"
+                >
+                  <div class="text-yellow-400 text-[28px] mb-3">★★★★★</div>
+                  <h3
+                    class="text-[20px] sm:text-[24px] font-bold text-[#0F2F64] mb-3"
+                  >
+                    “Excellent Services”
+                  </h3>
+                  <p class="text-xs text-[#09276A] leading-relaxed mb-4">
+                    Donna @Carebusinessbootcamp offers an amazing personalised
+                    support with setting up your health and social care
+                    business. She is knowledgeable, infact an expert in the
+                    field, with all the patience and commitment to take you
+                    through your journey successfully.
+                  </p>
+                  <a
+                    href="#"
+                    class="flex items-center text-[#3D6ABF] text-[18px] font-medium gap-1"
+                  >
+                    <span class="text-xl text-blue-600">▸</span>
+                    <span class="underline">Read the review</span>
+                  </a>
+                  <div
+                    class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
+                  ></div>
+                </div>
+                <div class="flex items-center gap-0 mt-[22px] mb-[35px]">
+                  <img
+                    src="./assets/images/avatar-2.png"
+                    class="w-[110px] h-[110px] rounded-full"
+                    alt="Avatar"
+                  />
+                  <div class="-ml-1">
+                    <p class="text-[20px] text-[#0F2F64] font-normal">
+                      Finda Otsumah
+                    </p>
+                    <p class="text-base text-[#384569]">Norwich, UK</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Cards 3 -->
+            <div class="swiper-slide item">
+              <div>
+                <div
+                  class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 relative"
+                >
+                  <div class="text-yellow-400 text-[28px] mb-3">★★★★★</div>
+                  <h3
+                    class="text-[20px] sm:text-[24px] font-bold text-[#0F2F64] mb-3"
+                  >
+                    “Excellent Services”
+                  </h3>
+                  <p class="text-xs text-[#09276A] leading-relaxed mb-4">
+                    Donna @Carebusinessbootcamp offers an amazing personalised
+                    support with setting up your health and social care
+                    business. She is knowledgeable, infact an expert in the
+                    field, with all the patience and commitment to take you
+                    through your journey successfully.
+                  </p>
+                  <a
+                    href="#"
+                    class="flex items-center text-[#3D6ABF] text-[18px] font-medium gap-1"
+                  >
+                    <span class="text-xl text-blue-600">▸</span>
+                    <span class="underline">Read the review</span>
+                  </a>
+                  <div
+                    class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
+                  ></div>
+                </div>
+                <div class="flex items-center gap-0 mt-[22px] mb-[35px]">
+                  <img
+                    src="./assets/images/avatar-3.png"
+                    class="w-[110px] h-[110px] rounded-full"
+                    alt="Avatar"
+                  />
+                  <div class="-ml-1">
+                    <p class="text-[20px] text-[#0F2F64] font-normal">
+                      Finda Otsumah
+                    </p>
+                    <p class="text-base text-[#384569]">Norwich, UK</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Cards 4 -->
+            <div class="swiper-slide item">
+              <div>
+                <div
+                  class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 relative"
+                >
+                  <div class="text-yellow-400 text-[28px] mb-3">★★★★★</div>
+                  <h3
+                    class="text-[20px] sm:text-[24px] font-bold text-[#0F2F64] mb-3"
+                  >
+                    “Excellent Services”
+                  </h3>
+                  <p class="text-xs text-[#09276A] leading-relaxed mb-4">
+                    Donna @Carebusinessbootcamp offers an amazing personalised
+                    support with setting up your health and social care
+                    business. She is knowledgeable, infact an expert in the
+                    field, with all the patience and commitment to take you
+                    through your journey successfully.
+                  </p>
+                  <a
+                    href="#"
+                    class="flex items-center text-[#3D6ABF] text-[18px] font-medium gap-1"
+                  >
+                    <span class="text-xl text-blue-600">▸</span>
+                    <span class="underline">Read the review</span>
+                  </a>
+                  <div
+                    class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
+                  ></div>
+                </div>
+                <div class="flex items-center gap-0 mt-[22px] mb-[35px]">
+                  <img
+                    src="./assets/images/avatar-4.png"
+                    class="w-[110px] h-[110px] rounded-full"
+                    alt="Avatar"
+                  />
+                  <div class="-ml-1">
+                    <p class="text-[20px] text-[#0F2F64] font-normal">
+                      Finda Otsumah
+                    </p>
+                    <p class="text-base text-[#384569]">Norwich, UK</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Cards 5 -->
+            <div class="swiper-slide item">
+              <div>
+                <div
+                  class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 relative"
+                >
+                  <div class="text-yellow-400 text-[28px] mb-3">★★★★★</div>
+                  <h3
+                    class="text-[20px] sm:text-[24px] font-bold text-[#0F2F64] mb-3"
+                  >
+                    “Excellent Services”
+                  </h3>
+                  <p class="text-xs text-[#09276A] leading-relaxed mb-4">
+                    Donna @Carebusinessbootcamp offers an amazing personalised
+                    support with setting up your health and social care
+                    business. She is knowledgeable, infact an expert in the
+                    field, with all the patience and commitment to take you
+                    through your journey successfully.
+                  </p>
+                  <a
+                    href="#"
+                    class="flex items-center text-[#3D6ABF] text-[18px] font-medium gap-1"
+                  >
+                    <span class="text-xl text-blue-600">▸</span>
+                    <span class="underline">Read the review</span>
+                  </a>
+                  <div
+                    class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
+                  ></div>
+                </div>
+                <div class="flex items-center gap-0 mt-[22px] mb-[35px]">
+                  <img
+                    src="./assets/images/avatar-5.png"
+                    class="w-[110px] h-[110px] rounded-full"
+                    alt="Avatar"
+                  />
+                  <div class="-ml-1">
+                    <p class="text-[20px] text-[#0F2F64] font-normal">
+                      Finda Otsumah
+                    </p>
+                    <p class="text-base text-[#384569]">Norwich, UK</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Cards 6 -->
+            <div class="swiper-slide item">
+              <div>
+                <div
+                  class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 relative"
+                >
+                  <div class="text-yellow-400 text-[28px] mb-3">★★★★★</div>
+                  <h3
+                    class="text-[20px] sm:text-[24px] font-bold text-[#0F2F64] mb-3"
+                  >
+                    “Excellent Services”
+                  </h3>
+                  <p class="text-xs text-[#09276A] leading-relaxed mb-4">
+                    Donna @Carebusinessbootcamp offers an amazing personalised
+                    support with setting up your health and social care
+                    business. She is knowledgeable, infact an expert in the
+                    field, with all the patience and commitment to take you
+                    through your journey successfully.
+                  </p>
+                  <a
+                    href="#"
+                    class="flex items-center text-[#3D6ABF] text-[18px] font-medium gap-1"
+                  >
+                    <span class="text-xl text-blue-600">▸</span>
+                    <span class="underline">Read the review</span>
+                  </a>
+                  <div
+                    class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
+                  ></div>
+                </div>
+                <div class="flex items-center gap-0 mt-[22px] mb-[35px]">
+                  <img
+                    src="./assets/images/avatar-6.png"
+                    class="w-[110px] h-[110px] rounded-full"
+                    alt="Avatar"
+                  />
+                  <div class="-ml-1">
+                    <p class="text-[20px] text-[#0F2F64] font-normal">
+                      Finda Otsumah
+                    </p>
+                    <p class="text-base text-[#384569]">Norwich, UK</p>
                   </div>
                 </div>
               </div>
@@ -1515,9 +1803,11 @@
         class="flex flex-col-reverse lg:flex-row items-center justify-between gap-10 lg:gap-5"
       >
         <!-- Left Content -->
-        <div class="max-w-[663px] lg:max-w-[463px] xl:max-w-[663px] w-full">
+        <div
+          class="max-w-[663px] lg:max-w-[463px] xl:max-w-[663px] w-full text-center lg:text-left"
+        >
           <img
-            class="animate-spin [animation-duration:2s]"
+            class="animate-spin [animation-duration:2s] mx-auto lg:mx-0"
             src="./assets/images/twinch-star.png"
             alt="twich-star"
           />
@@ -1527,7 +1817,7 @@
           >
             Free Your Money & Invest With Confident
             <span
-              class="w-3/4 md:w-2/4 lg:w-3/4 h-6 left-0 -z-1 bottom-2 md:bottom-5 lg:bottom-2 xl:bottom-5 absolute bg-lime-200"
+              class="w-3/4 md:w-2/4 lg:w-3/4 h-6 left-6 md:left-[155px] lg:left-0 -z-1 bottom-2 md:bottom-5 lg:bottom-2 xl:bottom-5 absolute bg-lime-200"
             ></span>
           </h2>
 
@@ -1635,28 +1925,28 @@
     <section
       data-aos="fade-up"
       data-aos-duration="2000"
-      class="max-w-[1311px] p-[29px] mx-auto lg:ml-6 md:ml-3 md:rounded-t-[15px] xl:ml-auto mt-[80px] bg-no-repeat bg-cover bg-[url(./assets/images/revol.png)] rounded-b-[15px]"
+      class="max-w-[1311px] shadow-xl p-[29px] mx-auto lg:ml-6 md:ml-3 md:rounded-t-[15px] xl:ml-auto mt-[80px] bg-no-repeat bg-cover bg-[url(./assets/images/revol.png)] rounded-b-[15px]"
     >
       <div class="bg-white/90 px-8 rounded-xl text-center shadow-md">
         <div class="flex flex-col lg:flex-row items-center lg:items-start">
           <!-- Image Section -->
-          <div class="w-full lg:w-1/4 mt-0 lg:mt-[154px] mb-8 lg:mb-0">
+          <div class="w-full lg:w-3/10 mt-0 lg:mt-[174px] mb-8 lg:mb-0">
             <img
-              class="w-full max-w-[550px] mx-auto hidden xl:block"
+              class="w-full mx-auto hidden xl:block"
               src="./assets/images/11.png"
               alt=""
             />
           </div>
 
           <!-- Content Section -->
-          <div class="w-full lg:w-3/4 lg:-ml-[100px]">
+          <div class="w-full lg:w-7/10 lg:mt-[90px] lg:-ml-[110px]">
             <img
               src="./assets/images/twinch-star.png"
               alt="star"
               class="mx-auto mb-4 mt-[28px] animate-spin [animation-duration:2s]"
             />
             <h4
-              class="text-[20px] sm:text-[36px] md:text-[42px] lg:text-[48px] font-bold mb-4"
+              class="text-[20px] sm:text-[36px] md:text-[42px] lg:text-[46px] font-bold mb-4"
             >
               Revolutionizing
               <span class="text-black font-extrabold">Profitable Trading</span>
@@ -1776,6 +2066,9 @@
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- package for the phone input filed -->
+    <script src="./assets/build/js/intlTelInput.js"></script>
 
     <!-- custom script -->
     <script src="./custom.js"></script>

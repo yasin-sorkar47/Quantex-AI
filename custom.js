@@ -60,6 +60,10 @@ AOS.init();
 const swiper = new Swiper(".swiper", {
   loop: true,
   autoplay: false,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -92,3 +96,7 @@ counters.forEach((counter) => {
 
   updateCount();
 });
+
+// for the phone input filed
+var input = document.querySelector("#phone");
+window.intlTelInput(input, {});
