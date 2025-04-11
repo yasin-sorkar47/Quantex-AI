@@ -69,3 +69,26 @@ const swiper = new Swiper(".swiper", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+// counting feature
+const counters = document.querySelectorAll(".count");
+
+counters.forEach((counter) => {
+  const target = parseFloat(counter.getAttribute("data-target"));
+  let count = 0;
+
+  const speed = 200; // Lower is faster
+  const step = target / speed;
+
+  const updateCount = () => {
+    if (count < target) {
+      count += step;
+      counter.innerText = count.toFixed(2); // Show 2 decimal points
+      requestAnimationFrame(updateCount);
+    } else {
+      counter.innerText = target.toFixed(2);
+    }
+  };
+
+  updateCount();
+});
