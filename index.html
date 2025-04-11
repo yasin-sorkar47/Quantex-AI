@@ -19,12 +19,60 @@
     />
     <!-- aos for animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
     <!-- tailwindcss -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <style>
       .poppins-thin {
         font-family: "Poppins", sans-serif;
+      }
+
+      @keyframes marquee {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      .animate-marquee {
+        animation: marquee 25s linear infinite;
+      }
+
+      /* for swiper js  */
+      .swiper {
+        max-width: 1280px;
+        height: 1000px;
+      }
+
+      .swiper-slide {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+      }
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        border: 1px solid gray;
+        padding: 35px;
+        color: gray;
+        border-radius: 50%;
+      }
+      .swiper-button-prev:hover,
+      .swiper-button-next:hover {
+        background: #602cd1;
+        color: white;
+        border: none;
       }
     </style>
   </head>
@@ -52,20 +100,20 @@
           <li>
             <a
               href="#"
-              class="text-base font-bold py-[11px] px-[30px] xl:px-[50px] border-2 border-[#602CD1] bg-[#F6F5F9] rounded-[23px]"
+              class="nav-link text-base font-bold py-[11px] px-[30px] xl:px-[50px] border-2 border-[#602CD1] bg-[#F6F5F9] rounded-[23px]"
             >
               Home
             </a>
           </li>
-          <li><a href="#" class="text-base font-bold">About Us</a></li>
-          <li><a href="#" class="text-base font-bold">Contact</a></li>
-          <li><a href="#" class="text-base font-bold">Faq</a></li>
+          <li><a href="#" class="nav-link text-base font-bold">About Us</a></li>
+          <li><a href="#" class="nav-link text-base font-bold">Contact</a></li>
+          <li><a href="#" class="nav-link text-base font-bold">Faq</a></li>
         </ul>
 
         <!-- Start Earn Button -->
         <div class="hidden lg:block">
           <button
-            class="py-[10px] xl:py-[14px] px-[25px] xl:px-[43px] uppercase text-base font-bold border-[3px] border-[#8B5EED] bg-[#602CD1] text-white rounded-[10px]"
+            class="py-[10px] xl:py-[14px] px-[25px] xl:px-[43px] uppercase text-base font-bold border-[3px] border-[#8B5EED] bg-[#602CD1] text-white rounded-[10px] hover:bg-[#7647e0] hover:scale-105 cursor-pointer transition-all duration-300 ease-in-out"
           >
             Start earn
           </button>
@@ -91,19 +139,25 @@
           <li>
             <a
               href="#"
-              class="block text-base font-bold py-2 px-4 border-2 border-[#602CD1] bg-[#F6F5F9] rounded-[23px]"
+              class="nav-link block text-base font-bold py-2 px-4 border-2 border-[#602CD1] bg-[#F6F5F9] rounded-[23px]"
             >
               Home
             </a>
           </li>
           <li>
-            <a href="#" class="block text-base font-bold px-4 py-2">About Us</a>
+            <a href="#" class="nav-link block text-base font-bold px-4 py-2"
+              >About Us</a
+            >
           </li>
           <li>
-            <a href="#" class="block text-base font-bold px-4 py-2">Contact</a>
+            <a href="#" class="nav-link block text-base font-bold px-4 py-2"
+              >Contact</a
+            >
           </li>
           <li>
-            <a href="#" class="block text-base font-bold px-4 py-2">Faq</a>
+            <a href="#" class="nav-link block text-base font-bold px-4 py-2"
+              >Faq</a
+            >
           </li>
           <li>
             <button
@@ -227,7 +281,7 @@
 
             <button
               type="submit"
-              class="w-full cursor-pointer text-[20px] sm:text-[24px] md:text-[28px] p-[15px] md:p-[20px] bg-[#602CD1] hover:bg-purple-700 text-white font-semibold rounded-lg shadow-md transition duration-300"
+              class="w-full cursor-pointer text-[20px] sm:text-[24px] md:text-[28px] p-[15px] md:p-[20px] bg-[#602CD1] hover:bg-[#7647e0] hover:scale-105 ease-in-out text-white font-semibold rounded-lg shadow-md transition duration-300"
             >
               SIGN UP →
             </button>
@@ -236,9 +290,56 @@
       </div>
     </section>
 
-    <div class="xl:-mt-[85px] lg:-mt-[45px] md:-mt-[35px] -mt-[20px]">
-      <img class="w-full" src="./assets/images/banner-bottom.png" alt="image" />
+    <div
+      class="-mt-[85px] h-[125px] bg-gradient-to-r from-[#5BFAE3] to-[#6ba6f9] flex flex-column items-center pl-[46px]"
+    >
+      <div
+        class="grid grid-cols-2 2xl:grid-cols-7 xl:grid-cols-6 lg:grid-cols-4 md:grid-cols-3 gap-x-[29px] md:gap-x-[49px] animate-marquee"
+      >
+        <div class="flex items-center gap-x-1">
+          <i class="fa-solid fa-magnifying-glass text-5xl text-white"></i>
+          <p class="text-white text-4xl font-semibold">QuanTex</p>
+        </div>
+        <div class="flex items-center gap-x-1">
+          <i class="fa-solid fa-magnifying-glass text-5xl text-white"></i>
+          <p class="text-white text-4xl font-semibold">QuanTex</p>
+        </div>
+        <div class="hidden md:block">
+          <div class="flex items-center gap-x-1">
+            <i class="fa-solid fa-magnifying-glass text-5xl text-white"></i>
+            <p class="text-white text-4xl font-semibold">QuanTex</p>
+          </div>
+        </div>
+        <div class="hidden lg:block">
+          <div class="flex items-center gap-x-1">
+            <i class="fa-solid fa-magnifying-glass text-5xl text-white"></i>
+            <p class="text-white text-4xl font-semibold">QuanTex</p>
+          </div>
+        </div>
+        <div class="hidden xl:block">
+          <div class="flex items-center gap-x-1">
+            <i class="fa-solid fa-magnifying-glass text-5xl text-white"></i>
+            <p class="text-white text-4xl font-semibold">QuanTex</p>
+          </div>
+        </div>
+        <div class="hidden xl:block">
+          <div class="flex items-center gap-x-1">
+            <i class="fa-solid fa-magnifying-glass text-5xl text-white"></i>
+            <p class="text-white text-4xl font-semibold">QuanTex</p>
+          </div>
+        </div>
+        <div class="hidden 2xl:block">
+          <div class="flex items-center gap-x-1">
+            <i class="fa-solid fa-magnifying-glass text-5xl text-white"></i>
+            <p class="text-white text-4xl font-semibold">QuanTex</p>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- <div class="xl:-mt-[85px] lg:-mt-[45px] md:-mt-[35px] -mt-[20px]">
+      <img class="w-full" src="./assets/images/banner-bottom.png" alt="image" />
+    </div> -->
     <!-- coin section -->
     <section
       class="max-w-[1538px] mx-auto pt-[108px] mb-[70px] px-[20px] 2xl:px-0"
@@ -316,7 +417,7 @@
           data-aos-duration="2000"
         >
           <img
-            class="animate-spin"
+            class="animate-spin [animation-duration:2s]"
             src="./assets/images/twinch-star.png"
             alt="twich-star"
           />
@@ -340,8 +441,20 @@
             straight to your inbox — and stay ahead of the tech curve.
           </p>
 
+          <div
+            class="w-full lg:w-1/2 -mt-[70px] lg:hidden"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
+            <img
+              class="w-full h-auto"
+              src="./assets/images/supercharge-image.png"
+              alt="supercharge"
+            />
+          </div>
+
           <button
-            class="py-[12px] sm:py-[15px] px-[30px] sm:px-[45px] cursor-pointer border-[3px] border-[#8B5EED] bg-[#602CD1] text-[18px] sm:text-[22px] font-bold text-[#fff] rounded-[9px]"
+            class="py-[12px] sm:py-[15px] px-[30px] sm:px-[45px] cursor-pointer border-[3px] border-[#8B5EED] bg-[#602CD1] text-[18px] sm:text-[22px] font-bold text-[#fff] rounded-[9px] hover:bg-[#7647e0] hover:scale-105 transition-all duration-300 ease-in-out"
           >
             SING UP →
           </button>
@@ -349,7 +462,7 @@
 
         <!-- Right Image -->
         <div
-          class="w-full lg:w-1/2"
+          class="w-full lg:w-1/2 hidden lg:block"
           data-aos="fade-up"
           data-aos-duration="1000"
         >
@@ -372,7 +485,7 @@
         <!-- top content -->
         <div class="max-w-[1011px] text-center mx-auto">
           <img
-            class="mx-auto mb-[21px] animate-spin"
+            class="mx-auto mb-[21px] animate-spin [animation-duration:2s]"
             src="./assets/images/twinch-star.png"
             alt="star"
           />
@@ -512,7 +625,7 @@
       <!-- top content -->
       <div class="max-w-[1033px] text-center mx-auto">
         <img
-          class="mx-auto mb-[21px] animate-spin"
+          class="mx-auto mb-[21px] animate-spin [animation-duration:2s]"
           src="./assets/images/twinch-star.png"
           alt="star"
         />
@@ -532,9 +645,9 @@
 
       <!-- comment card -->
       <div class="bg-white mt-[54px]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative swiper">
           <!-- Arrows -->
-          <div
+          <!-- <div
             class="absolute top-2/5 -left-4 sm:-left-8 md:-left-12 lg:-left-16 transform -translate-y-1/2 z-10"
           >
             <button
@@ -551,265 +664,798 @@
             >
               <img src="./assets/images/right-arrow.png" alt="arrow" />
             </button>
-          </div>
+          </div> -->
 
-          <!-- Cards Row -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Cards 1 -->
-            <div>
-              <div
-                class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 relative"
-              >
-                <div class="text-yellow-400 text-[28px] mb-3">★★★★★</div>
-                <h3
-                  class="text-[20px] sm:text-[24px] font-bold text-[#0F2F64] mb-3"
-                >
-                  “Excellent Services”
-                </h3>
-                <p class="text-xs text-[#09276A] leading-relaxed mb-4">
-                  Donna @Carebusinessbootcamp offers an amazing personalised
-                  support with setting up your health and social care business.
-                  She is knowledgeable, infact an expert in the field, with all
-                  the patience and commitment to take you through your journey
-                  successfully.
-                </p>
-                <a
-                  href="#"
-                  class="flex items-center text-[#3D6ABF] text-[18px] font-medium gap-1"
-                >
-                  <span class="text-xl text-blue-600">▸</span>
-                  <span class="underline">Read the review</span>
-                </a>
-                <div
-                  class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
-                ></div>
-              </div>
-              <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
-                <img
-                  src="https://i.pravatar.cc/40?img=5"
-                  class="w-[54px] h-[54px] rounded-full"
-                  alt="Avatar"
-                />
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
+          <div class="swiper-wrapper">
+            <!-- slide 1 -->
+            <div class="swiper-slide">
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Cards 1 -->
                 <div>
-                  <p class="text-[20px] text-[#0F2F64] font-normal">
-                    Finda Otsumah
-                  </p>
-                  <p class="text-base text-[#384569]">Norwich, UK</p>
+                  <div
+                    class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 relative"
+                  >
+                    <div class="text-yellow-400 text-[28px] mb-3">★★★★★</div>
+                    <h3
+                      class="text-[20px] sm:text-[24px] font-bold text-[#0F2F64] mb-3"
+                    >
+                      “Excellent Services”
+                    </h3>
+                    <p class="text-xs text-[#09276A] leading-relaxed mb-4">
+                      Donna @Carebusinessbootcamp offers an amazing personalised
+                      support with setting up your health and social care
+                      business. She is knowledgeable, infact an expert in the
+                      field, with all the patience and commitment to take you
+                      through your journey successfully.
+                    </p>
+                    <a
+                      href="#"
+                      class="flex items-center text-[#3D6ABF] text-[18px] font-medium gap-1"
+                    >
+                      <span class="text-xl text-blue-600">▸</span>
+                      <span class="underline">Read the review</span>
+                    </a>
+                    <div
+                      class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
+                    ></div>
+                  </div>
+                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                    <img
+                      src="https://i.pravatar.cc/40?img=5"
+                      class="w-[54px] h-[54px] rounded-full"
+                      alt="Avatar"
+                    />
+                    <div>
+                      <p class="text-[20px] text-[#0F2F64] font-normal">
+                        Finda Otsumah
+                      </p>
+                      <p class="text-base text-[#384569]">Norwich, UK</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Cards 2 -->
+                <div>
+                  <div
+                    class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 relative"
+                  >
+                    <div class="text-yellow-400 text-[28px] mb-3">★★★★★</div>
+                    <h3
+                      class="text-[20px] sm:text-[24px] font-bold text-[#0F2F64] mb-3"
+                    >
+                      “Excellent Services”
+                    </h3>
+                    <p class="text-xs text-[#09276A] leading-relaxed mb-4">
+                      Donna @Carebusinessbootcamp offers an amazing personalised
+                      support with setting up your health and social care
+                      business. She is knowledgeable, infact an expert in the
+                      field, with all the patience and commitment to take you
+                      through your journey successfully.
+                    </p>
+                    <a
+                      href="#"
+                      class="flex items-center text-[#3D6ABF] text-[18px] font-medium gap-1"
+                    >
+                      <span class="text-xl text-blue-600">▸</span>
+                      <span class="underline">Read the review</span>
+                    </a>
+                    <div
+                      class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
+                    ></div>
+                  </div>
+                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                    <img
+                      src="https://i.pravatar.cc/40?img=5"
+                      class="w-[54px] h-[54px] rounded-full"
+                      alt="Avatar"
+                    />
+                    <div>
+                      <p class="text-[20px] text-[#0F2F64] font-normal">
+                        Finda Otsumah
+                      </p>
+                      <p class="text-base text-[#384569]">Norwich, UK</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Cards 3 -->
+                <div>
+                  <div
+                    class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 relative"
+                  >
+                    <div class="text-yellow-400 text-[28px] mb-3">★★★★★</div>
+                    <h3
+                      class="text-[20px] sm:text-[24px] font-bold text-[#0F2F64] mb-3"
+                    >
+                      “Excellent Services”
+                    </h3>
+                    <p class="text-xs text-[#09276A] leading-relaxed mb-4">
+                      Donna @Carebusinessbootcamp offers an amazing personalised
+                      support with setting up your health and social care
+                      business. She is knowledgeable, infact an expert in the
+                      field, with all the patience and commitment to take you
+                      through your journey successfully.
+                    </p>
+                    <a
+                      href="#"
+                      class="flex items-center text-[#3D6ABF] text-[18px] font-medium gap-1"
+                    >
+                      <span class="text-xl text-blue-600">▸</span>
+                      <span class="underline">Read the review</span>
+                    </a>
+                    <div
+                      class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
+                    ></div>
+                  </div>
+                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                    <img
+                      src="https://i.pravatar.cc/40?img=5"
+                      class="w-[54px] h-[54px] rounded-full"
+                      alt="Avatar"
+                    />
+                    <div>
+                      <p class="text-[20px] text-[#0F2F64] font-normal">
+                        Finda Otsumah
+                      </p>
+                      <p class="text-base text-[#384569]">Norwich, UK</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Cards 4 -->
+                <div>
+                  <div
+                    class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 relative"
+                  >
+                    <div class="text-yellow-400 text-[28px] mb-3">★★★★★</div>
+                    <h3
+                      class="text-[20px] sm:text-[24px] font-bold text-[#0F2F64] mb-3"
+                    >
+                      “Excellent Services”
+                    </h3>
+                    <p class="text-xs text-[#09276A] leading-relaxed mb-4">
+                      Donna @Carebusinessbootcamp offers an amazing personalised
+                      support with setting up your health and social care
+                      business. She is knowledgeable, infact an expert in the
+                      field, with all the patience and commitment to take you
+                      through your journey successfully.
+                    </p>
+                    <a
+                      href="#"
+                      class="flex items-center text-[#3D6ABF] text-[18px] font-medium gap-1"
+                    >
+                      <span class="text-xl text-blue-600">▸</span>
+                      <span class="underline">Read the review</span>
+                    </a>
+                    <div
+                      class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
+                    ></div>
+                  </div>
+                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                    <img
+                      src="https://i.pravatar.cc/40?img=5"
+                      class="w-[54px] h-[54px] rounded-full"
+                      alt="Avatar"
+                    />
+                    <div>
+                      <p class="text-[20px] text-[#0F2F64] font-normal">
+                        Finda Otsumah
+                      </p>
+                      <p class="text-base text-[#384569]">Norwich, UK</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Cards 5 -->
+                <div>
+                  <div
+                    class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 relative"
+                  >
+                    <div class="text-yellow-400 text-[28px] mb-3">★★★★★</div>
+                    <h3
+                      class="text-[20px] sm:text-[24px] font-bold text-[#0F2F64] mb-3"
+                    >
+                      “Excellent Services”
+                    </h3>
+                    <p class="text-xs text-[#09276A] leading-relaxed mb-4">
+                      Donna @Carebusinessbootcamp offers an amazing personalised
+                      support with setting up your health and social care
+                      business. She is knowledgeable, infact an expert in the
+                      field, with all the patience and commitment to take you
+                      through your journey successfully.
+                    </p>
+                    <a
+                      href="#"
+                      class="flex items-center text-[#3D6ABF] text-[18px] font-medium gap-1"
+                    >
+                      <span class="text-xl text-blue-600">▸</span>
+                      <span class="underline">Read the review</span>
+                    </a>
+                    <div
+                      class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
+                    ></div>
+                  </div>
+                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                    <img
+                      src="https://i.pravatar.cc/40?img=5"
+                      class="w-[54px] h-[54px] rounded-full"
+                      alt="Avatar"
+                    />
+                    <div>
+                      <p class="text-[20px] text-[#0F2F64] font-normal">
+                        Finda Otsumah
+                      </p>
+                      <p class="text-base text-[#384569]">Norwich, UK</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Cards 6 -->
+                <div>
+                  <div
+                    class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 relative"
+                  >
+                    <div class="text-yellow-400 text-[28px] mb-3">★★★★★</div>
+                    <h3
+                      class="text-[20px] sm:text-[24px] font-bold text-[#0F2F64] mb-3"
+                    >
+                      “Excellent Services”
+                    </h3>
+                    <p class="text-xs text-[#09276A] leading-relaxed mb-4">
+                      Donna @Carebusinessbootcamp offers an amazing personalised
+                      support with setting up your health and social care
+                      business. She is knowledgeable, infact an expert in the
+                      field, with all the patience and commitment to take you
+                      through your journey successfully.
+                    </p>
+                    <a
+                      href="#"
+                      class="flex items-center text-[#3D6ABF] text-[18px] font-medium gap-1"
+                    >
+                      <span class="text-xl text-blue-600">▸</span>
+                      <span class="underline">Read the review</span>
+                    </a>
+                    <div
+                      class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
+                    ></div>
+                  </div>
+                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                    <img
+                      src="https://i.pravatar.cc/40?img=5"
+                      class="w-[54px] h-[54px] rounded-full"
+                      alt="Avatar"
+                    />
+                    <div>
+                      <p class="text-[20px] text-[#0F2F64] font-normal">
+                        Finda Otsumah
+                      </p>
+                      <p class="text-base text-[#384569]">Norwich, UK</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <!-- Cards 2 -->
-            <div>
-              <div
-                class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 relative"
-              >
-                <div class="text-yellow-400 text-[28px] mb-3">★★★★★</div>
-                <h3
-                  class="text-[20px] sm:text-[24px] font-bold text-[#0F2F64] mb-3"
-                >
-                  “Excellent Services”
-                </h3>
-                <p class="text-xs text-[#09276A] leading-relaxed mb-4">
-                  Donna @Carebusinessbootcamp offers an amazing personalised
-                  support with setting up your health and social care business.
-                  She is knowledgeable, infact an expert in the field, with all
-                  the patience and commitment to take you through your journey
-                  successfully.
-                </p>
-                <a
-                  href="#"
-                  class="flex items-center text-[#3D6ABF] text-[18px] font-medium gap-1"
-                >
-                  <span class="text-xl text-blue-600">▸</span>
-                  <span class="underline">Read the review</span>
-                </a>
-                <div
-                  class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
-                ></div>
-              </div>
-              <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
-                <img
-                  src="https://i.pravatar.cc/40?img=5"
-                  class="w-[54px] h-[54px] rounded-full"
-                  alt="Avatar"
-                />
+            <!-- slide 2 -->
+            <div class="swiper-slide">
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Cards 1 -->
                 <div>
-                  <p class="text-[20px] text-[#0F2F64] font-normal">
-                    Finda Otsumah
-                  </p>
-                  <p class="text-base text-[#384569]">Norwich, UK</p>
+                  <div
+                    class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 relative"
+                  >
+                    <div class="text-yellow-400 text-[28px] mb-3">★★★★★</div>
+                    <h3
+                      class="text-[20px] sm:text-[24px] font-bold text-[#0F2F64] mb-3"
+                    >
+                      “Excellent Services”
+                    </h3>
+                    <p class="text-xs text-[#09276A] leading-relaxed mb-4">
+                      Donna @Carebusinessbootcamp offers an amazing personalised
+                      support with setting up your health and social care
+                      business. She is knowledgeable, infact an expert in the
+                      field, with all the patience and commitment to take you
+                      through your journey successfully.
+                    </p>
+                    <a
+                      href="#"
+                      class="flex items-center text-[#3D6ABF] text-[18px] font-medium gap-1"
+                    >
+                      <span class="text-xl text-blue-600">▸</span>
+                      <span class="underline">Read the review</span>
+                    </a>
+                    <div
+                      class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
+                    ></div>
+                  </div>
+                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                    <img
+                      src="https://i.pravatar.cc/40?img=5"
+                      class="w-[54px] h-[54px] rounded-full"
+                      alt="Avatar"
+                    />
+                    <div>
+                      <p class="text-[20px] text-[#0F2F64] font-normal">
+                        Finda Otsumah
+                      </p>
+                      <p class="text-base text-[#384569]">Norwich, UK</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Cards 2 -->
+                <div>
+                  <div
+                    class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 relative"
+                  >
+                    <div class="text-yellow-400 text-[28px] mb-3">★★★★★</div>
+                    <h3
+                      class="text-[20px] sm:text-[24px] font-bold text-[#0F2F64] mb-3"
+                    >
+                      “Excellent Services”
+                    </h3>
+                    <p class="text-xs text-[#09276A] leading-relaxed mb-4">
+                      Donna @Carebusinessbootcamp offers an amazing personalised
+                      support with setting up your health and social care
+                      business. She is knowledgeable, infact an expert in the
+                      field, with all the patience and commitment to take you
+                      through your journey successfully.
+                    </p>
+                    <a
+                      href="#"
+                      class="flex items-center text-[#3D6ABF] text-[18px] font-medium gap-1"
+                    >
+                      <span class="text-xl text-blue-600">▸</span>
+                      <span class="underline">Read the review</span>
+                    </a>
+                    <div
+                      class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
+                    ></div>
+                  </div>
+                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                    <img
+                      src="https://i.pravatar.cc/40?img=5"
+                      class="w-[54px] h-[54px] rounded-full"
+                      alt="Avatar"
+                    />
+                    <div>
+                      <p class="text-[20px] text-[#0F2F64] font-normal">
+                        Finda Otsumah
+                      </p>
+                      <p class="text-base text-[#384569]">Norwich, UK</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Cards 3 -->
+                <div>
+                  <div
+                    class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 relative"
+                  >
+                    <div class="text-yellow-400 text-[28px] mb-3">★★★★★</div>
+                    <h3
+                      class="text-[20px] sm:text-[24px] font-bold text-[#0F2F64] mb-3"
+                    >
+                      “Excellent Services”
+                    </h3>
+                    <p class="text-xs text-[#09276A] leading-relaxed mb-4">
+                      Donna @Carebusinessbootcamp offers an amazing personalised
+                      support with setting up your health and social care
+                      business. She is knowledgeable, infact an expert in the
+                      field, with all the patience and commitment to take you
+                      through your journey successfully.
+                    </p>
+                    <a
+                      href="#"
+                      class="flex items-center text-[#3D6ABF] text-[18px] font-medium gap-1"
+                    >
+                      <span class="text-xl text-blue-600">▸</span>
+                      <span class="underline">Read the review</span>
+                    </a>
+                    <div
+                      class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
+                    ></div>
+                  </div>
+                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                    <img
+                      src="https://i.pravatar.cc/40?img=5"
+                      class="w-[54px] h-[54px] rounded-full"
+                      alt="Avatar"
+                    />
+                    <div>
+                      <p class="text-[20px] text-[#0F2F64] font-normal">
+                        Finda Otsumah
+                      </p>
+                      <p class="text-base text-[#384569]">Norwich, UK</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Cards 4 -->
+                <div>
+                  <div
+                    class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 relative"
+                  >
+                    <div class="text-yellow-400 text-[28px] mb-3">★★★★★</div>
+                    <h3
+                      class="text-[20px] sm:text-[24px] font-bold text-[#0F2F64] mb-3"
+                    >
+                      “Excellent Services”
+                    </h3>
+                    <p class="text-xs text-[#09276A] leading-relaxed mb-4">
+                      Donna @Carebusinessbootcamp offers an amazing personalised
+                      support with setting up your health and social care
+                      business. She is knowledgeable, infact an expert in the
+                      field, with all the patience and commitment to take you
+                      through your journey successfully.
+                    </p>
+                    <a
+                      href="#"
+                      class="flex items-center text-[#3D6ABF] text-[18px] font-medium gap-1"
+                    >
+                      <span class="text-xl text-blue-600">▸</span>
+                      <span class="underline">Read the review</span>
+                    </a>
+                    <div
+                      class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
+                    ></div>
+                  </div>
+                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                    <img
+                      src="https://i.pravatar.cc/40?img=5"
+                      class="w-[54px] h-[54px] rounded-full"
+                      alt="Avatar"
+                    />
+                    <div>
+                      <p class="text-[20px] text-[#0F2F64] font-normal">
+                        Finda Otsumah
+                      </p>
+                      <p class="text-base text-[#384569]">Norwich, UK</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Cards 5 -->
+                <div>
+                  <div
+                    class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 relative"
+                  >
+                    <div class="text-yellow-400 text-[28px] mb-3">★★★★★</div>
+                    <h3
+                      class="text-[20px] sm:text-[24px] font-bold text-[#0F2F64] mb-3"
+                    >
+                      “Excellent Services”
+                    </h3>
+                    <p class="text-xs text-[#09276A] leading-relaxed mb-4">
+                      Donna @Carebusinessbootcamp offers an amazing personalised
+                      support with setting up your health and social care
+                      business. She is knowledgeable, infact an expert in the
+                      field, with all the patience and commitment to take you
+                      through your journey successfully.
+                    </p>
+                    <a
+                      href="#"
+                      class="flex items-center text-[#3D6ABF] text-[18px] font-medium gap-1"
+                    >
+                      <span class="text-xl text-blue-600">▸</span>
+                      <span class="underline">Read the review</span>
+                    </a>
+                    <div
+                      class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
+                    ></div>
+                  </div>
+                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                    <img
+                      src="https://i.pravatar.cc/40?img=5"
+                      class="w-[54px] h-[54px] rounded-full"
+                      alt="Avatar"
+                    />
+                    <div>
+                      <p class="text-[20px] text-[#0F2F64] font-normal">
+                        Finda Otsumah
+                      </p>
+                      <p class="text-base text-[#384569]">Norwich, UK</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Cards 6 -->
+                <div>
+                  <div
+                    class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 relative"
+                  >
+                    <div class="text-yellow-400 text-[28px] mb-3">★★★★★</div>
+                    <h3
+                      class="text-[20px] sm:text-[24px] font-bold text-[#0F2F64] mb-3"
+                    >
+                      “Excellent Services”
+                    </h3>
+                    <p class="text-xs text-[#09276A] leading-relaxed mb-4">
+                      Donna @Carebusinessbootcamp offers an amazing personalised
+                      support with setting up your health and social care
+                      business. She is knowledgeable, infact an expert in the
+                      field, with all the patience and commitment to take you
+                      through your journey successfully.
+                    </p>
+                    <a
+                      href="#"
+                      class="flex items-center text-[#3D6ABF] text-[18px] font-medium gap-1"
+                    >
+                      <span class="text-xl text-blue-600">▸</span>
+                      <span class="underline">Read the review</span>
+                    </a>
+                    <div
+                      class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
+                    ></div>
+                  </div>
+                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                    <img
+                      src="https://i.pravatar.cc/40?img=5"
+                      class="w-[54px] h-[54px] rounded-full"
+                      alt="Avatar"
+                    />
+                    <div>
+                      <p class="text-[20px] text-[#0F2F64] font-normal">
+                        Finda Otsumah
+                      </p>
+                      <p class="text-base text-[#384569]">Norwich, UK</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <!-- Cards 3 -->
-            <div>
-              <div
-                class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 relative"
-              >
-                <div class="text-yellow-400 text-[28px] mb-3">★★★★★</div>
-                <h3
-                  class="text-[20px] sm:text-[24px] font-bold text-[#0F2F64] mb-3"
-                >
-                  “Excellent Services”
-                </h3>
-                <p class="text-xs text-[#09276A] leading-relaxed mb-4">
-                  Donna @Carebusinessbootcamp offers an amazing personalised
-                  support with setting up your health and social care business.
-                  She is knowledgeable, infact an expert in the field, with all
-                  the patience and commitment to take you through your journey
-                  successfully.
-                </p>
-                <a
-                  href="#"
-                  class="flex items-center text-[#3D6ABF] text-[18px] font-medium gap-1"
-                >
-                  <span class="text-xl text-blue-600">▸</span>
-                  <span class="underline">Read the review</span>
-                </a>
-                <div
-                  class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
-                ></div>
-              </div>
-              <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
-                <img
-                  src="https://i.pravatar.cc/40?img=5"
-                  class="w-[54px] h-[54px] rounded-full"
-                  alt="Avatar"
-                />
+            <!-- slide 3 -->
+            <div class="swiper-slide">
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Cards 1 -->
                 <div>
-                  <p class="text-[20px] text-[#0F2F64] font-normal">
-                    Finda Otsumah
-                  </p>
-                  <p class="text-base text-[#384569]">Norwich, UK</p>
+                  <div
+                    class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 relative"
+                  >
+                    <div class="text-yellow-400 text-[28px] mb-3">★★★★★</div>
+                    <h3
+                      class="text-[20px] sm:text-[24px] font-bold text-[#0F2F64] mb-3"
+                    >
+                      “Excellent Services”
+                    </h3>
+                    <p class="text-xs text-[#09276A] leading-relaxed mb-4">
+                      Donna @Carebusinessbootcamp offers an amazing personalised
+                      support with setting up your health and social care
+                      business. She is knowledgeable, infact an expert in the
+                      field, with all the patience and commitment to take you
+                      through your journey successfully.
+                    </p>
+                    <a
+                      href="#"
+                      class="flex items-center text-[#3D6ABF] text-[18px] font-medium gap-1"
+                    >
+                      <span class="text-xl text-blue-600">▸</span>
+                      <span class="underline">Read the review</span>
+                    </a>
+                    <div
+                      class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
+                    ></div>
+                  </div>
+                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                    <img
+                      src="https://i.pravatar.cc/40?img=5"
+                      class="w-[54px] h-[54px] rounded-full"
+                      alt="Avatar"
+                    />
+                    <div>
+                      <p class="text-[20px] text-[#0F2F64] font-normal">
+                        Finda Otsumah
+                      </p>
+                      <p class="text-base text-[#384569]">Norwich, UK</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <!-- Cards 4 -->
-            <div>
-              <div
-                class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 relative"
-              >
-                <div class="text-yellow-400 text-[28px] mb-3">★★★★★</div>
-                <h3
-                  class="text-[20px] sm:text-[24px] font-bold text-[#0F2F64] mb-3"
-                >
-                  “Excellent Services”
-                </h3>
-                <p class="text-xs text-[#09276A] leading-relaxed mb-4">
-                  Donna @Carebusinessbootcamp offers an amazing personalised
-                  support with setting up your health and social care business.
-                  She is knowledgeable, infact an expert in the field, with all
-                  the patience and commitment to take you through your journey
-                  successfully.
-                </p>
-                <a
-                  href="#"
-                  class="flex items-center text-[#3D6ABF] text-[18px] font-medium gap-1"
-                >
-                  <span class="text-xl text-blue-600">▸</span>
-                  <span class="underline">Read the review</span>
-                </a>
-                <div
-                  class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
-                ></div>
-              </div>
-              <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
-                <img
-                  src="https://i.pravatar.cc/40?img=5"
-                  class="w-[54px] h-[54px] rounded-full"
-                  alt="Avatar"
-                />
+                <!-- Cards 2 -->
                 <div>
-                  <p class="text-[20px] text-[#0F2F64] font-normal">
-                    Finda Otsumah
-                  </p>
-                  <p class="text-base text-[#384569]">Norwich, UK</p>
+                  <div
+                    class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 relative"
+                  >
+                    <div class="text-yellow-400 text-[28px] mb-3">★★★★★</div>
+                    <h3
+                      class="text-[20px] sm:text-[24px] font-bold text-[#0F2F64] mb-3"
+                    >
+                      “Excellent Services”
+                    </h3>
+                    <p class="text-xs text-[#09276A] leading-relaxed mb-4">
+                      Donna @Carebusinessbootcamp offers an amazing personalised
+                      support with setting up your health and social care
+                      business. She is knowledgeable, infact an expert in the
+                      field, with all the patience and commitment to take you
+                      through your journey successfully.
+                    </p>
+                    <a
+                      href="#"
+                      class="flex items-center text-[#3D6ABF] text-[18px] font-medium gap-1"
+                    >
+                      <span class="text-xl text-blue-600">▸</span>
+                      <span class="underline">Read the review</span>
+                    </a>
+                    <div
+                      class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
+                    ></div>
+                  </div>
+                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                    <img
+                      src="https://i.pravatar.cc/40?img=5"
+                      class="w-[54px] h-[54px] rounded-full"
+                      alt="Avatar"
+                    />
+                    <div>
+                      <p class="text-[20px] text-[#0F2F64] font-normal">
+                        Finda Otsumah
+                      </p>
+                      <p class="text-base text-[#384569]">Norwich, UK</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <!-- Cards 5 -->
-            <div>
-              <div
-                class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 relative"
-              >
-                <div class="text-yellow-400 text-[28px] mb-3">★★★★★</div>
-                <h3
-                  class="text-[20px] sm:text-[24px] font-bold text-[#0F2F64] mb-3"
-                >
-                  “Excellent Services”
-                </h3>
-                <p class="text-xs text-[#09276A] leading-relaxed mb-4">
-                  Donna @Carebusinessbootcamp offers an amazing personalised
-                  support with setting up your health and social care business.
-                  She is knowledgeable, infact an expert in the field, with all
-                  the patience and commitment to take you through your journey
-                  successfully.
-                </p>
-                <a
-                  href="#"
-                  class="flex items-center text-[#3D6ABF] text-[18px] font-medium gap-1"
-                >
-                  <span class="text-xl text-blue-600">▸</span>
-                  <span class="underline">Read the review</span>
-                </a>
-                <div
-                  class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
-                ></div>
-              </div>
-              <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
-                <img
-                  src="https://i.pravatar.cc/40?img=5"
-                  class="w-[54px] h-[54px] rounded-full"
-                  alt="Avatar"
-                />
+                <!-- Cards 3 -->
                 <div>
-                  <p class="text-[20px] text-[#0F2F64] font-normal">
-                    Finda Otsumah
-                  </p>
-                  <p class="text-base text-[#384569]">Norwich, UK</p>
+                  <div
+                    class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 relative"
+                  >
+                    <div class="text-yellow-400 text-[28px] mb-3">★★★★★</div>
+                    <h3
+                      class="text-[20px] sm:text-[24px] font-bold text-[#0F2F64] mb-3"
+                    >
+                      “Excellent Services”
+                    </h3>
+                    <p class="text-xs text-[#09276A] leading-relaxed mb-4">
+                      Donna @Carebusinessbootcamp offers an amazing personalised
+                      support with setting up your health and social care
+                      business. She is knowledgeable, infact an expert in the
+                      field, with all the patience and commitment to take you
+                      through your journey successfully.
+                    </p>
+                    <a
+                      href="#"
+                      class="flex items-center text-[#3D6ABF] text-[18px] font-medium gap-1"
+                    >
+                      <span class="text-xl text-blue-600">▸</span>
+                      <span class="underline">Read the review</span>
+                    </a>
+                    <div
+                      class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
+                    ></div>
+                  </div>
+                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                    <img
+                      src="https://i.pravatar.cc/40?img=5"
+                      class="w-[54px] h-[54px] rounded-full"
+                      alt="Avatar"
+                    />
+                    <div>
+                      <p class="text-[20px] text-[#0F2F64] font-normal">
+                        Finda Otsumah
+                      </p>
+                      <p class="text-base text-[#384569]">Norwich, UK</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <!-- Cards 6 -->
-            <div>
-              <div
-                class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 relative"
-              >
-                <div class="text-yellow-400 text-[28px] mb-3">★★★★★</div>
-                <h3
-                  class="text-[20px] sm:text-[24px] font-bold text-[#0F2F64] mb-3"
-                >
-                  “Excellent Services”
-                </h3>
-                <p class="text-xs text-[#09276A] leading-relaxed mb-4">
-                  Donna @Carebusinessbootcamp offers an amazing personalised
-                  support with setting up your health and social care business.
-                  She is knowledgeable, infact an expert in the field, with all
-                  the patience and commitment to take you through your journey
-                  successfully.
-                </p>
-                <a
-                  href="#"
-                  class="flex items-center text-[#3D6ABF] text-[18px] font-medium gap-1"
-                >
-                  <span class="text-xl text-blue-600">▸</span>
-                  <span class="underline">Read the review</span>
-                </a>
-                <div
-                  class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
-                ></div>
-              </div>
-              <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
-                <img
-                  src="https://i.pravatar.cc/40?img=5"
-                  class="w-[54px] h-[54px] rounded-full"
-                  alt="Avatar"
-                />
+                <!-- Cards 4 -->
                 <div>
-                  <p class="text-[20px] text-[#0F2F64] font-normal">
-                    Finda Otsumah
-                  </p>
-                  <p class="text-base text-[#384569]">Norwich, UK</p>
+                  <div
+                    class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 relative"
+                  >
+                    <div class="text-yellow-400 text-[28px] mb-3">★★★★★</div>
+                    <h3
+                      class="text-[20px] sm:text-[24px] font-bold text-[#0F2F64] mb-3"
+                    >
+                      “Excellent Services”
+                    </h3>
+                    <p class="text-xs text-[#09276A] leading-relaxed mb-4">
+                      Donna @Carebusinessbootcamp offers an amazing personalised
+                      support with setting up your health and social care
+                      business. She is knowledgeable, infact an expert in the
+                      field, with all the patience and commitment to take you
+                      through your journey successfully.
+                    </p>
+                    <a
+                      href="#"
+                      class="flex items-center text-[#3D6ABF] text-[18px] font-medium gap-1"
+                    >
+                      <span class="text-xl text-blue-600">▸</span>
+                      <span class="underline">Read the review</span>
+                    </a>
+                    <div
+                      class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
+                    ></div>
+                  </div>
+                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                    <img
+                      src="https://i.pravatar.cc/40?img=5"
+                      class="w-[54px] h-[54px] rounded-full"
+                      alt="Avatar"
+                    />
+                    <div>
+                      <p class="text-[20px] text-[#0F2F64] font-normal">
+                        Finda Otsumah
+                      </p>
+                      <p class="text-base text-[#384569]">Norwich, UK</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Cards 5 -->
+                <div>
+                  <div
+                    class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 relative"
+                  >
+                    <div class="text-yellow-400 text-[28px] mb-3">★★★★★</div>
+                    <h3
+                      class="text-[20px] sm:text-[24px] font-bold text-[#0F2F64] mb-3"
+                    >
+                      “Excellent Services”
+                    </h3>
+                    <p class="text-xs text-[#09276A] leading-relaxed mb-4">
+                      Donna @Carebusinessbootcamp offers an amazing personalised
+                      support with setting up your health and social care
+                      business. She is knowledgeable, infact an expert in the
+                      field, with all the patience and commitment to take you
+                      through your journey successfully.
+                    </p>
+                    <a
+                      href="#"
+                      class="flex items-center text-[#3D6ABF] text-[18px] font-medium gap-1"
+                    >
+                      <span class="text-xl text-blue-600">▸</span>
+                      <span class="underline">Read the review</span>
+                    </a>
+                    <div
+                      class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
+                    ></div>
+                  </div>
+                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                    <img
+                      src="https://i.pravatar.cc/40?img=5"
+                      class="w-[54px] h-[54px] rounded-full"
+                      alt="Avatar"
+                    />
+                    <div>
+                      <p class="text-[20px] text-[#0F2F64] font-normal">
+                        Finda Otsumah
+                      </p>
+                      <p class="text-base text-[#384569]">Norwich, UK</p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Cards 6 -->
+                <div>
+                  <div
+                    class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 relative"
+                  >
+                    <div class="text-yellow-400 text-[28px] mb-3">★★★★★</div>
+                    <h3
+                      class="text-[20px] sm:text-[24px] font-bold text-[#0F2F64] mb-3"
+                    >
+                      “Excellent Services”
+                    </h3>
+                    <p class="text-xs text-[#09276A] leading-relaxed mb-4">
+                      Donna @Carebusinessbootcamp offers an amazing personalised
+                      support with setting up your health and social care
+                      business. She is knowledgeable, infact an expert in the
+                      field, with all the patience and commitment to take you
+                      through your journey successfully.
+                    </p>
+                    <a
+                      href="#"
+                      class="flex items-center text-[#3D6ABF] text-[18px] font-medium gap-1"
+                    >
+                      <span class="text-xl text-blue-600">▸</span>
+                      <span class="underline">Read the review</span>
+                    </a>
+                    <div
+                      class="absolute bottom-0 left-0 w-5 h-5 bg-white rounded-bl-full shadow-inner"
+                    ></div>
+                  </div>
+                  <div class="flex items-center gap-4 mt-[22px] mb-[35px]">
+                    <img
+                      src="https://i.pravatar.cc/40?img=5"
+                      class="w-[54px] h-[54px] rounded-full"
+                      alt="Avatar"
+                    />
+                    <div>
+                      <p class="text-[20px] text-[#0F2F64] font-normal">
+                        Finda Otsumah
+                      </p>
+                      <p class="text-base text-[#384569]">Norwich, UK</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -830,7 +1476,7 @@
         <!-- Left Content -->
         <div class="max-w-[663px] lg:max-w-[463px] xl:max-w-[663px] w-full">
           <img
-            class="animate-spin"
+            class="animate-spin [animation-duration:2s]"
             src="./assets/images/twinch-star.png"
             alt="twich-star"
           />
@@ -860,15 +1506,23 @@
             Embark on a journey to the forefront of technology.
           </p>
 
+          <div class="w-full lg:w-1/2 -mt-[20px] mb-[20px] lg:hidden">
+            <img
+              class="w-full h-auto"
+              src="./assets/images/free-your-money.png"
+              alt="supercharge"
+            />
+          </div>
+
           <button
-            class="py-[12px] sm:py-[15px] px-[30px] sm:px-[45px] cursor-pointer border-[3px] border-[#8B5EED] uppercase bg-[#602CD1] text-[18px] sm:text-[22px] font-bold text-[#fff] rounded-[9px]"
+            class="py-[12px] hover:bg-[#7647e0] hover:scale-105 transition-all duration-300 ease-in-out sm:py-[15px] px-[30px] sm:px-[45px] cursor-pointer border-[3px] border-[#8B5EED] uppercase bg-[#602CD1] text-[18px] sm:text-[22px] font-bold text-[#fff] rounded-[9px]"
           >
             Get Started →
           </button>
         </div>
 
         <!-- Right Image -->
-        <div class="w-full lg:w-1/2">
+        <div class="w-full lg:w-1/2 hidden lg:block">
           <img
             class="w-full h-auto"
             src="./assets/images/free-your-money.png"
@@ -945,9 +1599,9 @@
       <div class="bg-white/90 px-8 rounded-xl text-center shadow-md">
         <div class="flex flex-col lg:flex-row items-center lg:items-start">
           <!-- Image Section -->
-          <div class="w-full lg:w-1/4 mt-[80px] lg:mt-[154px] mb-8 lg:mb-0">
+          <div class="w-full lg:w-1/4 mt-0 lg:mt-[154px] mb-8 lg:mb-0">
             <img
-              class="w-full max-w-[250px] mx-auto"
+              class="w-full max-w-[550px] mx-auto hidden xl:block"
               src="./assets/images/11.png"
               alt=""
             />
@@ -958,7 +1612,7 @@
             <img
               src="./assets/images/twinch-star.png"
               alt="star"
-              class="mx-auto mb-4 mt-[28px] animate-spin"
+              class="mx-auto mb-4 mt-[28px] animate-spin [animation-duration:2s]"
             />
             <h4
               class="text-[20px] sm:text-[36px] md:text-[42px] lg:text-[48px] font-bold mb-4"
@@ -976,7 +1630,7 @@
               translating into substantial earnings.
             </p>
             <button
-              class="py-[15px] px-[35px] md:px-[45px] mb-[60px] lg:mb-[124px] cursor-pointer border-[3px] border-[#8B5EED] uppercase bg-[#602CD1] text-[15px] font-bold text-white rounded-[9px] shadow-md hover:bg-[#4e23a7] transition-all"
+              class="py-[15px] hover:scale-105 duration-300 ease-in-out px-[35px] md:px-[45px] mb-[60px] lg:mb-[124px] cursor-pointer border-[3px] border-[#8B5EED] uppercase bg-[#602CD1] text-[15px] font-bold text-white rounded-[9px] shadow-md hover:bg-[#4e23a7] transition-all"
             >
               START Earn! →
             </button>
@@ -1076,52 +1730,13 @@
       </div>
     </footer>
 
-    <!-- custom script -->
-    <script>
-      const toggleBtn = document.getElementById("menu-toggle");
-      const mobileMenu = document.getElementById("mobile-menu");
-      let isOpen = false;
-
-      toggleBtn.addEventListener("click", () => {
-        isOpen = !isOpen;
-
-        if (isOpen) {
-          mobileMenu.classList.remove("hidden");
-          setTimeout(() => {
-            mobileMenu.classList.remove(
-              "opacity-0",
-              "scale-95",
-              "-translate-y-5"
-            );
-            mobileMenu.classList.add(
-              "opacity-100",
-              "scale-100",
-              "translate-y-0"
-            );
-          }, 10);
-          toggleBtn.innerHTML = "✖";
-        } else {
-          mobileMenu.classList.remove(
-            "opacity-100",
-            "scale-100",
-            "translate-y-0"
-          );
-          mobileMenu.classList.add("opacity-0", "scale-95", "-translate-y-5");
-          toggleBtn.innerHTML = "☰";
-
-          setTimeout(() => {
-            if (!isOpen) {
-              mobileMenu.classList.add("hidden");
-            }
-          }, 300); // match duration
-        }
-      });
-    </script>
-
     <!-- aos for animation -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- custom script -->
+    <script src="./custom.js"></script>
   </body>
 </html>
