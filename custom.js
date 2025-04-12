@@ -60,10 +60,10 @@ AOS.init();
 const swiper = new Swiper(".swiper", {
   loop: true,
   autoplay: false,
-  autoplay: {
-    delay: 5000,
-    disableOnInteraction: false,
-  },
+  // autoplay: {
+  //   delay: 5000,
+  //   disableOnInteraction: false,
+  // },
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -100,3 +100,15 @@ counters.forEach((counter) => {
 // for the phone input filed
 var input = document.querySelector("#phone");
 window.intlTelInput(input, {});
+
+// for handling auto reaload
+const form = document.getElementById("myForm");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  window.scrollTo({
+    top: 250,
+    behavior: "smooth",
+  });
+  form.reset();
+});
