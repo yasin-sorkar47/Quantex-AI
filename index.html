@@ -72,15 +72,15 @@
         padding-right: 0px;
       }
 
-      .swiper-button-prev,
-      .swiper-button-next {
+      .custom-prev,
+      .custom-next {
         border: 1px solid gray;
-        padding: 35px;
+        padding: 15px;
         color: gray;
         border-radius: 50%;
       }
-      .swiper-button-prev:hover,
-      .swiper-button-next:hover {
+      .custom-prev:hover,
+      .custom-next:hover {
         background: #602cd1;
         color: white;
         border: none;
@@ -210,7 +210,7 @@
 
       <!-- search box -->
       <div
-        class="relative max-w-full px-4 sm:px-6 md:px-0 mt-10 md:mt-[42px] 2xl:max-w-[696px] md:max-w-[596px] mx-auto"
+        class="relative max-w-full px-4 sm:px-6 md:px-0 mt-10 md:mt-[42px] 2xl:max-w-[696px] md:max-w-[596px] mx-auto z-50"
         data-aos="fade-up"
         data-aos-duration="2000"
       >
@@ -294,7 +294,7 @@
     </section>
 
     <div
-      class="overflow-hidden bg-gradient-to-r from-[#5BFAE3] to-[#6ba6f9] py-[35px] -mt-[80px]"
+      class="overflow-hidden bg-gradient-to-r from-[#5BFAE3] to-[#6ba6f9] py-[35px] -mt-[80px] -z-40"
     >
       <div class="flex w-max animate-marquee whitespace-nowrap gap-x-[49px]">
         <!--  Start of first loop -->
@@ -716,8 +716,44 @@
       <!-- comment card -->
       <div class="bg-white mt-[54px] hidden lg:block">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative swiper">
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
+          <!-- Custom Swiper Arrows with Heroicons -->
+          <div
+            class="custom-prev cursor-pointer absolute left-0 hover:text-white top-5/11 -translate-y-1/2 z-10 bg-gray-200 hover:bg-gray-400 p-3 rounded-full shadow-md transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-10 h-10 text-black hover:text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </div>
+
+          <div
+            class="custom-next cursor-pointer absolute right-0 hover:text-white top-5/11 -translate-y-1/2 z-10 bg-gray-200 hover:bg-gray-400 p-3 rounded-full shadow-md transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-10 h-10 text-black hover:text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </div>
 
           <div class="swiper-wrapper">
             <!-- slide 1 -->
